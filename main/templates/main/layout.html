@@ -12,40 +12,15 @@
   </head>
 </head>
 <body>
-    <div class="area"></div><nav class="main-menu">
-        <ul>
-            <li>
-                <a href="{% url 'home' %}">
-                    <i class="fa fa-home fa-2x"></i>
-                    <span class="nav-text">
-                       Главная
-                    </span>
-                </a>
-              
-            </li>
-
-        <ul class="logout">
-            <li>
-               <a href="{% url 'about' %}">
-                     <i class="fa fa-info fa-2x"></i>
-                    <span class="nav-text">
-                        О нас
-                    </span>
-                </a>
-            </li>  
-        </ul>
-
-        <ul class="logout">
-            <li>
-               <a href="{% url 'news_home' %}">
-                    <i class="fa-duotone fa-file"></i>
-                    <span class="nav-text">
-                        Новости
-                    </span>
-                </a>
-            </li>  
-        </ul>
-    </nav>    
+    <details>
+        <summary></summary>
+        <nav class="menu">
+          <a href="{% url 'home' %}">Главная</a>
+          <a href="{% url 'about' %}">О нас</a>
+          <a href="{% url 'news_home' %}">Новости</a>
+        </nav>
+    </details>
+    <a href="{% url 'create' %}"><button type="button" class="btn btn-primary">Добавить статью</button></a>
     <main>
         {% block content %}
         {% endblock %}

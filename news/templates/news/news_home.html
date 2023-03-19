@@ -4,4 +4,14 @@
 {% block content %}
     <h1>Новости</h1>
     <p>Здесь должен быть контент</p>
+    {% for el in news %}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+            <h5 class="card-title">{{el.title}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{el.anons}}</h6>
+            <p class="card-text">{{el.full_text}}</p>
+            <a href="{% url 'news-detail' el.id %}" class="btn btn-warning">Подробнее</a>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %}
